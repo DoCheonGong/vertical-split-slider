@@ -41,7 +41,7 @@ figure .panel li .bg {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 1;
+  opacity: 0;
   background-position: 9999px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -125,7 +125,7 @@ figure .panel li nav {
   position: absolute;
   bottom: 10vh;
   left: 6vw;
-  opacity: 1;
+  opacity: 0;
   transition: 0.5s;
 }
 figure .panel li nav span {
