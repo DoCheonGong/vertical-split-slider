@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical split slider</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="script/main.js"></script>
+</head>
+
+<body>
+    <figure>
+        <ul class="panel">
+            <li class="on">
+                <div class="bg" style="background-image: url(img/pic1.jpg);">
+                    <!--
+                    inline으로 style을 입히게 되면 우선순위가 최상위
+                    CSS에서 최상위 상속자;
+                    입히고자 하는 CSS를 정확하게 입힐 수 있지만
+                    
+                    index의 길이가 매우 길어지고
+                    CSS 효과를 넣으려면 같은 요소 모든 곳에
+                    적용해야 한다
+                -->
+                    <div class="shadow"></div>
+                </div>
+                <div class="txt">
+                    <h2>INNOVATION</h2>
+                </div>
+                <nav>
+                    <span><i class="fa-regular fa-star"></i></span>
+                    <strong>View Detail Page</strong>
+                </nav>
+            </li>
+            <li>
+                <div class="bg" style="background-image: url(img/pic2.jpg);">
+                    <div class=" shadow"></div>
+                </div>
+                <div class="txt">
+                    <h2>BRAND NEW</h2>
+                </div>
+                <nav>
+                    <span><i class="fa-regular fa-star"></i></span>
+                    <strong>View Detail Page</strong>
+                </nav>
+            </li>
+            <li>
+                <div class="bg" style="background-image: url(img/pic4.jpg);">
+                    <div class=" shadow"></div>
+                </div>
+                <div class="txt">
+                    <h2>REMARKABLE</h2>
+                </div>
+                <nav>
+                    <span><i class="fa-regular fa-star"></i></span>
+                    <strong>View Detail Page</strong>
+                </nav>
+            </li>
+        </ul>
+        <a href="#" class="btnUp">
+            <span></span>
+            <em>UP</em>
+        </a>
+        <a href="#" class="btnDown">
+            <span></span>
+            <em>DOWN</em>
+        </a>
+    </figure>
+</body>
+
+</html>

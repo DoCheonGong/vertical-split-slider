@@ -1,0 +1,10 @@
+figure {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 13vh 7vw 8vh;
+    overflow: hidden;
+
+    @import "./panel";
+    @import "./btns";
+}

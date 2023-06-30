@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 13vh 7vw 8vh;
+  overflow: hidden;
+}
+figure .panel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+figure .panel li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+figure .panel li .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-position: 9999px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.8s;
+}
+figure .panel li .bg .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-size: inherit;
+  background-position: center;
+  z-index: 1;
+  margin-top: 40px;
+  transform: scale(0.95);
+  filter: blur(20px);
+}
+figure .panel li .bg::before, figure .panel li .bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-size: inherit;
+  background-position: center;
+  z-index: 2;
+  transition: margin-top 0.6s;
+}
+figure .panel li .bg::before {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+  margin-top: -100px;
+}
+figure .panel li .bg::after {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  margin-top: 100px;
+}
+figure .panel li .txt {
+  position: absolute;
+  top: 50%;
+  left: 6vw;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  opacity: 0;
+}
+figure .panel li .txt h2 {
+  font: normal 7vw/1 "Anton";
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  gap: 3px;
+  position: relative;
+  padding-bottom: 10px;
+}
+figure .panel li .txt h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: 1s 0.5s;
+}
+figure .panel li .txt h2 span {
+  display: inline-block;
+  transform: translateX(12px);
+  transition-duration: 0.5s;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1333333333);
+}
+figure .panel li nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  position: absolute;
+  bottom: 10vh;
+  left: 6vw;
+  opacity: 1;
+  transition: 0.5s;
+}
+figure .panel li nav span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #333;
+  font-size: 10px;
+  opacity: 0;
+  transform: translateX(50px) rotate(200deg);
+  transition: 0.5s 0.8s;
+}
+figure .panel li nav strong {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 0.5s 1s;
+}
+figure .panel li.on {
+  z-index: 2;
+}
+figure .panel li.on .bg {
+  opacity: 1;
+  background-position: center;
+  transform: translateY(0%) rotateX(0deg) scale(1);
+}
+figure .panel li.on .bg::before, figure .panel li.on .bg::after {
+  margin-top: 0px;
+}
+figure .panel li.on .txt {
+  opacity: 1;
+}
+figure .panel li.on .txt h2::after {
+  width: 100%;
+}
+figure .panel li.on .txt h2 span {
+  transform: translateY(0%);
+}
+figure .panel li.on nav {
+  opacity: 1;
+}
+figure .panel li.on nav span {
+  transform: translateX(0px) rotate(0deg);
+  opacity: 1;
+}
+figure .panel li.on nav strong {
+  transform: translateX(0px);
+  opacity: 1;
+}
+figure .panel li.up .bg {
+  opacity: 0;
+  transform: translateY(-80%) rotateX(-45deg) scale(0.7);
+}
+figure .panel li.down .bg {
+  opacity: 0;
+  transform: translateY(80%) rotateX(45deg) scale(0.7);
+}
+figure .btnUp {
+  display: block;
+  width: 61px;
+  height: 50px;
+  position: absolute;
+  bottom: calc(8vh + 100px);
+  right: 7vw;
+  margin-right: -60px;
+  transform: scale(0.8);
+  z-index: 3;
+  transition-property: bottom, right;
+  transition-duration: 0.5s;
+}
+figure .btnUp::before, figure .btnUp::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: center top;
+  transition: 0.5s 0.2s;
+}
+figure .btnUp::before {
+  transform: rotate(45deg);
+}
+figure .btnUp::after {
+  transform: rotate(-45deg);
+}
+figure .btnUp span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background-color: #333;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: 0.5s;
+}
+figure .btnUp em {
+  font: 12px/1 "Arial";
+  color: #111;
+  text-align: center;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+figure .btnUp:hover::before {
+  transform: rotate(45deg) translateY(-40px);
+  opacity: 0;
+}
+figure .btnUp:hover::after {
+  transform: rotate(-45deg) translateY(-40px);
+  opacity: 0;
+}
+figure .btnUp:hover span {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+figure .btnUp:hover em {
+  top: 50%;
+  opacity: 1;
+}
+figure .btnDown {
+  display: block;
+  width: 61px;
+  height: 50px;
+  position: absolute;
+  bottom: 8vh;
+  right: 7vw;
+  margin-right: -60px;
+  transform: scale(0.8);
+  z-index: 3;
+  transition-property: bottom, right;
+  transition-duration: 0.5s;
+}
+figure .btnDown::before, figure .btnDown::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-origin: center bottom;
+  transition: 0.5s 0.2s;
+}
+figure .btnDown::before {
+  transform: rotate(45deg);
+}
+figure .btnDown::after {
+  transform: rotate(-45deg);
+}
+figure .btnDown span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background-color: #333;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transition: 0.5s;
+}
+figure .btnDown em {
+  font: 12px/1 "Arial";
+  color: #111;
+  text-align: center;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+figure .btnDown:hover::before {
+  transform: rotate(45deg) translateY(40px);
+  opacity: 0;
+}
+figure .btnDown:hover::after {
+  transform: rotate(-45deg) translateY(40px);
+  opacity: 0;
+}
+figure .btnDown:hover span {
+  transform: translateY(40px);
+  opacity: 0;
+}
+figure .btnDown:hover em {
+  top: 50%;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */
